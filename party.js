@@ -5,7 +5,9 @@ let party= [];
 function render (){
    
    const events = party.map((names) => {
-        return `<li> ${names.name} </li>`
+        return `<li> ${names.name} 
+        <p> ${names.date}</p>
+        </li>`
     })
 
     list.innerHTML = events.join('')
