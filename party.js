@@ -3,11 +3,12 @@ const list = document.querySelector("ul")
 let party= [];
 
 function render (){
-    const events = party.map((names) => {
+   
+   const events = party.map((names) => {
         return `<li> ${names.name} </li>`
     })
 
-    console.log(events)
+    list.innerHTML = events.join('')
 };
 
 async function fetchParty (){
@@ -16,11 +17,11 @@ async function fetchParty (){
     console.log(json)
     party = json.data;
     console.log(party)
-    
+    render()
 };
 
-await fetchParty();
 
+fetchParty(); 
 render();
 
 
